@@ -21,25 +21,15 @@ exports.postProject = function(req, res) {
 
 // Create endpoint /api/projects for GET
 exports.getProjects = function(req, res) {
-    // Project.find(function(err, projects) {
-    //     if (err) {
-    //         res.status(500).send(err);
-    //         return;
-    //     }
-    //     res.json(projects);
-    // });
     console.log("getting projects");
-    testproject1 = {
-        _id: 1,
-        title: "Build a school",
-        description: "Help build a school for Jian's village",
-    };
-    testproject2 = {
-        _id: 1,
-        title: "Teach english",
-        description: "Help teach English to Nico's class",
-    };
-    res.json([testproject1, testproject2]);
+    Project.find(function(err, projects) {
+        if (err) {
+            res.status(500).send(err);
+            return;
+        }
+        console.log("projects: " + projects);
+        res.json(projects);
+    });
 };
 
 
