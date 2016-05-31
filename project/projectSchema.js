@@ -12,7 +12,8 @@ var Project   = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }
+    },
+    img: String
 });
 
 // Export the Mongoose model
