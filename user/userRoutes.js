@@ -10,6 +10,14 @@ function userRoutes(passport) {
     router.post('/signup', userController.signup);
     router.post('/unregister', passport.authenticate('jwt', {session: false}),userController.unregister)
 
+
+    router.route('/users')
+        //  .post(userController.postProject)
+        .get(userController.getUsers); 
+
+    router.route('/user/:user_id')
+        .get(userController.getUser);
+
     return router;
 
 }
