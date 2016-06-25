@@ -4,8 +4,8 @@ exports.postApplication = function(req, res) {
 
     var application = new Application(req.body);
 
-    //do not allow user to fake identity. The user who postet the application must be the same user that is logged in
-    if (!req.user.equals(application.user)) {
+    //do not allow user to fake identity. The user who post the application must be the same user that is logged in
+    if (!req.user.equals(application.applicant)) {
         res.sendStatus(401);
     }
 
