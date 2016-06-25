@@ -27,7 +27,6 @@ exports.getProjects = function(req, res) {
             res.status(500).send(err);
             return;
         }
-        console.log("projects: " + projects);
         res.json(projects);
     });
 };
