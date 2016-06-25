@@ -1,8 +1,8 @@
 // Load required packages
 var mongoose = require('mongoose');
 
-// Define our project schema
-var Application   = new mongoose.Schema({
+// Define our application schema
+var Application = new mongoose.Schema({
     createdDate: Date,
     host: {
         type: mongoose.Schema.Types.ObjectId,
@@ -20,4 +20,4 @@ var Application   = new mongoose.Schema({
 });
 
 // Export the Mongoose model
-module.exports = mongoose.model('Project', Project);
+module.exports = mongoose.model('Application', Application);
