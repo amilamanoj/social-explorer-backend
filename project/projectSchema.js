@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var Project   = new mongoose.Schema({
     title: String,
     description: String,
+    objective: String,
     fromDate: Date,
     toDate: Date,
     country: String,
