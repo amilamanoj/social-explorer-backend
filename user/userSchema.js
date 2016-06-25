@@ -14,7 +14,15 @@ var userSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+
+    age: String,
+
+    country: String,
+
+    city: String,
+
+    img: String
 });
 
 userSchema.pre('save', function(next) {
