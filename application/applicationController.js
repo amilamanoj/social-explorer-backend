@@ -22,7 +22,7 @@ exports.postApplication = function(req, res) {
 // Create endpoint /api/applications for GET
 exports.getApplications = function(req, res) {
     console.log("getting applications");
-    Application.find(function(err, applications) {
+    Application.find(req.query, function(err, applications) {
         if (err) {
             res.status(500).send(err);
             return;
