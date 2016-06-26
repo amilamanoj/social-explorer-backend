@@ -79,7 +79,7 @@ function createToken(user) {
     return jwt.encode(tokenPayload,Config.auth.jwtSecret);
 };
 
-// Create endpoint /api/profile for GET
+// Create endpoint /user for GET
 module.exports.getUsers = function(req, res) {
     console.log("getting users");
     User.find(function(err, users) {
@@ -92,9 +92,30 @@ module.exports.getUsers = function(req, res) {
     });
 };
 
+// Create endpoint /user/:user_id for PUT
+exports.putUser = function(req, res) {
+    // Use the Beer model to find a specific beer
+    User.findByIdAndUpdate(
+        req.params.user_id,
+        req.body,
+        {
+            //pass the new object to cb function
+            new: true,
+            //run validations
+            runValidators: true
+        }, function (err, user) {
+            if (err) {
+                res.status(500).send(err);
+                return;
+            }
+            res.json(user);
+        });
+
+};
 
 
-// Create endpoint /api/profiles/:profile_id for GET
+
+// Create endpoint /user/:user_id for GET
 exports.getUser = function(req, res) {
     // Use the Beer model to find a specific beer
     User.findById(req.params.user_id, function(err, user) {

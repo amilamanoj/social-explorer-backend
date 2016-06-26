@@ -16,7 +16,8 @@ function userRoutes(passport) {
         .get(userController.getUsers); 
 
     router.route('/user/:user_id')
-        .get(userController.getUser);
+        .get(userController.getUser)
+        .put(userController.putUser);
 
     return router;
 
