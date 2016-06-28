@@ -1,10 +1,10 @@
-var Project = require('./ratingSchema');
+var Rating = require('./ratingSchema');
 
 exports.postRating = function(req, res) {
 
-    var project = new Rating(req.body);
+    var rating = new Rating(req.body);
 
-    //do not allow user to fake identity. The user who postet the project must be the same user that is logged in
+    //do not allow user to fake identity. The user who postet the rating must be the same user that is logged in
     if (!req.user.equals(rating.createUser)) {
         console.log("getting test");
         res.sendStatus(401);
@@ -36,7 +36,7 @@ exports.getRating = function(req, res) {
 // Create endpoint /api/rating/:rating_id for GET
 exports.getRating = function(req, res) {
     // Use the Beer model to find a specific beer
-    RAting.findById(req.params.rating_id, function(err, rating) {
+    Rating.findById(req.params.rating_id, function(err, rating) {
         if (err) {
             res.status(500).send(err)
             return;
@@ -49,7 +49,7 @@ exports.getRating = function(req, res) {
 // Create endpoint /api/rating/:rating_id for PUT
 exports.putRating = function(req, res) {
     // Use the Beer model to find a specific beer
-    Project.findByIdAndUpdate(
+    Rating.findByIdAndUpdate(
         req.params.rating_id,
         req.body,
         {
@@ -68,7 +68,7 @@ exports.putRating = function(req, res) {
 };
 
 // Create endpoint /api/rating/:rating_id for DELETE
-exports.deleteProject = function(req, res) {
+exports.deleteRating = function(req, res) {
     // Use the Beer model to find a specific beer and remove it
     Rating.findById(req.params.rating_id, function(err, m) {
         if (err) {
