@@ -4,6 +4,11 @@ var mongoose = require('mongoose');
 // Define our application schema
 var Application = new mongoose.Schema({
     createdDate: Date,
+    status: {
+        type: String,
+        enum : ['PENDING','ACCEPTED','REJECTED'],
+        default : 'PENDING'
+    },
     host: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
