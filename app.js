@@ -52,7 +52,7 @@ jwtConfig(passport);
 var userRoutes = require("./user/userRoutes");
 var projectRoutes = require("./project/projectRoutes");
 var applicationRoutes = require("./application/applicationRoutes");
-var ratingRoutes= require("./rating/ratingRoutes");
+var ratingRoutes= require("./ratings/ratingRoutes");
 
 app.use('/api', projectRoutes(passport));
 app.use('/api', ratingRoutes(passport));
