@@ -123,6 +123,7 @@ exports.getUser = function(req, res) {
             res.status(500).send(err)
             return;
         }
+       user.password="";
         res.json(user);
 
     });
