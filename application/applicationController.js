@@ -75,7 +75,7 @@ exports.deleteApplication = function(req, res) {
             return;
         }
         //authorize
-        if (m.user && req.user.equals(m.user)) {
+        if (m.applicant && req.user.equals(m.applicant)) {
             m.remove();
             res.sendStatus(200);
         } else {
