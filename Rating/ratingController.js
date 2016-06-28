@@ -6,6 +6,7 @@ exports.postRating = function(req, res) {
 
     //do not allow user to fake identity. The user who postet the project must be the same user that is logged in
     if (!req.user.equals(rating.createUser)) {
+        console.log("getting test");
         res.sendStatus(401);
     }
 
