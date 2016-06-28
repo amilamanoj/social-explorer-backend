@@ -1,6 +1,6 @@
 var Rating = require('./ratingSchema');
 
-exports.postRating = function(req, res) {
+exports.postRatings = function(req, res) {
 
     var rating = new Rating(req.body);
 
@@ -21,7 +21,7 @@ exports.postRating = function(req, res) {
 };
 
 // Create endpoint /api/rating for GET
-exports.getRating = function(req, res) {
+exports.getRatings = function(req, res) {
     console.log("getting rating");
     Rating.find(function(err, rating) {
         if (err) {

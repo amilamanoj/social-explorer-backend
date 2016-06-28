@@ -14,8 +14,8 @@ function ratingRoutes(passport) {
     router.use(mw.unless({method: ['GET', 'OPTIONS']}));
 
     router.route('/ratings')
-        .post(ratingController.postRating)
-        .get(ratingController.getRating);
+        .post(ratingController.postRatings)
+        .get(ratingController.getRatings);
 
     router.route('/rating/:rating_id')
         .get(ratingController.getRating)
