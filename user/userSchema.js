@@ -22,7 +22,9 @@ var userSchema = mongoose.Schema({
 
     city: String,
 
-    img: String
+    img: String,
+    
+    description: String
 });
 
 userSchema.pre('save', function(next) {
