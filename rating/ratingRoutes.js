@@ -17,7 +17,7 @@ function ratingRoutes(passport) {
         .post(ratingController.postRatings)
         .get(ratingController.getRatings);
 
-    router.route('/rating/:rating_id')
+    router.route('/ratings/:ratedUser')
         .get(ratingController.getRating)
         .put(ratingController.putRating);
         //.delete(ratingController.deleteRating);

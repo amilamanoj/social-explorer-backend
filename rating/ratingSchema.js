@@ -5,13 +5,17 @@ var mongoose = require('mongoose');
 var Rating   = new mongoose.Schema({
     rate: Number,
     description: String,
-    createUser: {
+    createdUser: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
     ratedUser: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
+    },
+    project: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Project'
     },
     createdDate: Date
 });

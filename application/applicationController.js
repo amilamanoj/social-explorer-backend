@@ -40,7 +40,6 @@ exports.getApplication = function(req, res) {
             res.status(500).send(err)
             return;
         };
-
         res.json(application);
     });
 };

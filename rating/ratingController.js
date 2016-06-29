@@ -23,7 +23,7 @@ exports.postRatings = function(req, res) {
 // Create endpoint /api/rating for GET
 exports.getRatings = function(req, res) {
     console.log("getting rating");
-    Rating.find(function(err, rating) {
+    Rating.find(req.query, function(err, rating) {
         if (err) {
             res.status(500).send(err);
             return;
@@ -41,7 +41,6 @@ exports.getRating = function(req, res) {
             res.status(500).send(err)
             return;
         };
-
         res.json(rating);
     });
 };
