@@ -17,7 +17,8 @@ var Rating   = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Project'
     },
-    createdDate: Date
+    createdDate: Date,
+    rateAvg: Number
 });
 
 // Export the Mongoose model

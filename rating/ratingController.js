@@ -28,7 +28,25 @@ exports.getRatings = function(req, res) {
             res.status(500).send(err);
             return;
         }
-        res.json(rating);
+        var varIndex;
+        var sumRate=0;
+
+         for(varIndex = 0; varIndex < rating.length; ++varIndex){
+             sumRate+=rating[varIndex].rate;
+             console.log("ganz"+rating[varIndex]);
+             console.log("inderkla"+(rating[varIndex].rate));
+         }
+        // rating.average=(sumRate/rating.length) where I have to store this value???
+        var test=sumRate/rating.length
+        console.log(("hahdajdsfs"+sumRate/rating.length));
+            if(rating.length==0){
+                res.json(rating);
+            }
+        else {
+                rating[0].rateAvg = test;
+                res.json(rating);
+            }
+
     });
 };
 
