@@ -2,6 +2,7 @@
  * Created by amilamanoj on 5/25/16.
  */
 var Config = require('./config/config.js');
+//var Config = require('./config/config.dev_local.js');
 
 /**
  * db connect
@@ -52,7 +53,7 @@ jwtConfig(passport);
 var userRoutes = require("./user/userRoutes");
 var projectRoutes = require("./project/projectRoutes");
 var applicationRoutes = require("./application/applicationRoutes");
-var ratingRoutes= require("./ratings/ratingRoutes");
+var ratingRoutes= require("./rating/ratingRoutes");
 
 app.use('/api', projectRoutes(passport));
 app.use('/api', ratingRoutes(passport));
