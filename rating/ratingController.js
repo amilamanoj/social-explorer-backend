@@ -1,11 +1,11 @@
 var Rating = require('./ratingSchema');
 
-exports.postRatings = function(req, res) {
+exports.postRating = function(req, res) {
 
     var rating = new Rating(req.body);
 
     //do not allow user to fake identity. The user who postet the rating must be the same user that is logged in
-    if (!req.user.equals(rating.createUser)) {
+    if (!req.user.equals(rating.createdUser)) {
         console.log("getting test");
         res.sendStatus(401);
     }
