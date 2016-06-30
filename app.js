@@ -2,7 +2,7 @@
  * Created by amilamanoj on 5/25/16.
  */
 var Config = require('./config/config.js');
-//var Config = require('./config/config.dev_local.js');
+//var Config = require('./config/config.dev_local.js'); //for local 
 
 /**
  * db connect
