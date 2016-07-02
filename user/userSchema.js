@@ -16,7 +16,7 @@ var userSchema = mongoose.Schema({
         required: true
     },
 
-    age: String,
+    age: Date,
 
     country: String,
 
