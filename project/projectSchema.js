@@ -15,7 +15,6 @@ var Project   = new mongoose.Schema({
         ref: 'User'
     },
     img: String,
-    
     createdDate: Date
 });
 
