@@ -41,6 +41,7 @@ exports.getRatings = function(req, res) {
                      console.log('Error finding user')
                  }
                  console.log(user.username);
+                 console.log(rating[varIndex]);
                  rating[varIndex].cUser = user.username;
 
              });
