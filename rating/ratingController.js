@@ -1,4 +1,7 @@
 var Rating = require('./ratingSchema');
+var User = require('../user/userSchema');
+var Project = require('../project/projectSchema');
+
 
 exports.postRating = function(req, res) {
 
@@ -32,9 +35,16 @@ exports.getRatings = function(req, res) {
         var sumRate=0;
 
          for(varIndex = 0; varIndex < rating.length; ++varIndex){
+             var currRating = rating[varIndex];
+             User.findById(currRating.ratedUser, function(err, user) {
+                 if (err) {
+                     console.log('Error finding user')
+                 }
+                 console.log(user.username);
+                 rating[varIndex].cUser = user.username;
+
+             });
              sumRate+=rating[varIndex].rate;
-             console.log("ganz"+rating[varIndex]);
-             console.log("inderkla"+(rating[varIndex].rate));
          }
         // rating.average=(sumRate/rating.length) where I have to store this value???
         var test=sumRate/rating.length
