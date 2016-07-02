@@ -7,7 +7,7 @@ var Application = new mongoose.Schema({
     processedDate: Date,
     status: {
         type: String,
-        enum : ['PENDING','ACCEPTED','REJECTED'],
+        enum : ['PENDING','ACCEPTED','REJECTED', 'RATED'],
         default : 'PENDING'
     },
     host: {
