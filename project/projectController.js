@@ -22,7 +22,7 @@ exports.postProject = function(req, res) {
 // Create endpoint /api/projects for GET
 exports.getProjects = function(req, res) {
     console.log("getting projects");
-    Project.find(function(err, projects) {
+    Project.find(req.query, function(err, projects) {
         if (err) {
             res.status(500).send(err);
             return;
