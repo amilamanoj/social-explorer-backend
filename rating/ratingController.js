@@ -28,6 +28,7 @@ exports.getRatings = function (req, res) {
     console.log("getting rating");
     Rating.find(req.query).populate('createdUser').populate('project').exec(function (err, rating) {
         if (err) {
+            console.log(err);
             res.status(500).send(err);
             return;
         }
@@ -44,6 +45,7 @@ exports.getRatings = function (req, res) {
         }
         else {
             rating[0].rateAvg = average;
+            console.log(rating);
             res.json(rating);
         }
 
